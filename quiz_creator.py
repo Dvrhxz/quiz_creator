@@ -6,7 +6,7 @@ from tkinter import messagebox
 root = tk.Tk()
 root.title("Quiz Creator")
 root.geometry("1366x768")
-root.resizable(False, False)
+#root.resizable(False, False)
 root.config(background="pink")
 
 # Elements
@@ -42,19 +42,36 @@ question_box.grid(
 
 # Answers box
 answer_boxes = {}
-y = 130
 letters = ["a", "b", "c", "d"]
-for index, letter in enumerate(letters): # makes a label and corresponding text box for letters a-d
+answers_frame = tk.Frame(root, bg="pink")  # Create a frame for answers
+answers_frame.grid(
+    row=1,
+    column=2,
+    columnspan=2,
+    padx=0,
+    pady=20
+)
+
+for index, letter in enumerate(letters):
     letter_label = tk.Label(
-        root,
+        answers_frame,  # Place inside the frame
         text=f"Answer {letter}.)",
         background="white",
         foreground="black",
-        relief= "solid",
-        width=40
+        relief="solid",
+        width=10
     )
 
     letter_label.grid(
+        row=index,
+        column=0,
+        padx=10,
+        pady=5,
+        sticky="w"
+    )
+
+    letter_text_box = tk.Text(answers_frame, width=30, height=7)
+    letter_text_box.grid(
         row=index,
         column=1,
         padx=10,
@@ -62,17 +79,7 @@ for index, letter in enumerate(letters): # makes a label and corresponding text 
         sticky="w"
     )
 
-    letter_text_box = tk.Text(root, width= 20, height= 2)
-    letter_text_box.grid(
-        row=index,
-        column=2,
-        padx=10,
-        pady=5,
-        sticky="w"
-    )
-
     answer_boxes[letter] = letter_text_box #determine which typed answer in box corresponds with what letter
-
 
 # integrate code from reference
 
