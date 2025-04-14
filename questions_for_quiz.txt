@@ -12,3 +12,10 @@ c.) lmao no
 d.) erm, akshually, wet is defined as something covered in liquid, therefore water cannot be wet as it is not covered by itself but rather it is liquid itself
 Correct Answer: d
 ~~~~~
+Question: Does the program with gui work?
+a.) did it work?
+b.) sureeeeeelyyy
+c.) of course
+d.) hopefully
+Correct Answer: c
+~~~~~
