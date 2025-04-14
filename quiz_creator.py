@@ -110,6 +110,22 @@ correct_answer_text_box.grid(
     sticky="w"
 )
 
+# Submit Button
+submit_button = tk.Button(
+    root,
+    text="SUBMIT",
+    background="lightgreen",
+    foreground="black",
+    font=("Times New Roman", 20, "bold")
+)
+
+submit_button.grid(
+    row=2,
+    column=3,
+    padx=0,
+    pady=5,
+    sticky="w"
+)
 # integrate code from reference
 
 
