@@ -6,7 +6,7 @@ from tkinter import messagebox
 root = tk.Tk()
 root.title("Quiz Creator")
 root.geometry("1366x768")
-#root.resizable(False, False)
+root.resizable(False, False)
 root.config(background="pink")
 
 # Elements
@@ -110,12 +110,53 @@ correct_answer_text_box.grid(
     sticky="w"
 )
 
+# integrate code from reference
+def submit_inputs():
+    # get input from question box
+    question = question_box.get(index1="1.0", index2="end").strip().capitalize()
+
+    # get input from letter boxes
+    letter_choices = {}
+    for letter in letters:
+        choice = answer_boxes[letter].get("1.0", "end").strip()
+        letter_choices[letter] = choice
+
+    # get input from correct answer box
+    correct_answer = correct_answer_text_box.get(index1="1.0", index2="end").strip().lower()
+
+    # check if all boxes have valid inputs
+    letter_box_no_answer = any(value == "" for value in letter_choices.values())
+
+    if question == "" or letter_box_no_answer or correct_answer not in letters:
+        messagebox.showerror(
+            title="Missing Input",
+            message="Please fill everything and choose a valid correct answer (a-d)."
+        )
+
+    # if all boxes are filled with valid inputs, write into text file
+    else:
+        with open("questions_for_quiz.txt", "a", encoding="utf-8") as questions_file:
+            questions_file.write(f"Question: {question}\n")
+            for key in letters:
+                questions_file.write(f"{key}.) {letter_choices[key]}\n")
+            questions_file.write(f"Correct Answer: {correct_answer}\n")
+            questions_file.write("~~~~~\n")
+
+        messagebox.showinfo(title="Saved", message="Question stored successfully.")
+
+        # Clear all boxes
+        question_box.delete(index1="1.0", index2="end")
+        correct_answer_text_box.delete(index1="1.0", index2="end")
+        for text_box in answer_boxes.values():
+            text_box.delete(index1="1.0", index2="end")
+
 # Submit Button
 submit_button = tk.Button(
     root,
     text="SUBMIT",
     background="lightgreen",
     foreground="black",
+    command=submit_inputs,
     font=("Times New Roman", 20, "bold")
 )
 
@@ -126,8 +167,6 @@ submit_button.grid(
     pady=5,
     sticky="w"
 )
-# integrate code from reference
-
 
 # initiate gui
 root.mainloop()
