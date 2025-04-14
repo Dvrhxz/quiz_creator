@@ -40,6 +40,40 @@ question_box.grid(
     pady=0,
 )
 
+# Answers box
+answer_boxes = {}
+y = 130
+letters = ["a", "b", "c", "d"]
+for index, letter in enumerate(letters): # makes a label and corresponding text box for letters a-d
+    letter_label = tk.Label(
+        root,
+        text=f"Answer {letter}.)",
+        background="white",
+        foreground="black",
+        relief= "solid",
+        width=40
+    )
+
+    letter_label.grid(
+        row=index,
+        column=1,
+        padx=10,
+        pady=5,
+        sticky="w"
+    )
+
+    letter_text_box = tk.Text(root, width= 20, height= 2)
+    letter_text_box.grid(
+        row=index,
+        column=2,
+        padx=10,
+        pady=5,
+        sticky="w"
+    )
+
+    answer_boxes[letter] = letter_text_box #determine which typed answer in box corresponds with what letter
+
+
 # integrate code from reference
 
 
