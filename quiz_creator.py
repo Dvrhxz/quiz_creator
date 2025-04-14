@@ -30,7 +30,7 @@ question_label.grid(
 question_box = tk.Text(
     root,
     height=25,
-    width=80,
+    width=70,
     font=("Times New Roman", 15, "bold")
 )
 question_box.grid(
@@ -56,6 +56,7 @@ for index, letter in enumerate(letters):
     letter_label = tk.Label(
         answers_frame,  # Place inside the frame
         text=f"Answer {letter}.)",
+        font=("Times New Roman", 13, "bold"),
         background="white",
         foreground="black",
         relief="solid",
@@ -80,6 +81,34 @@ for index, letter in enumerate(letters):
     )
 
     answer_boxes[letter] = letter_text_box #determine which typed answer in box corresponds with what letter
+
+# Correct answer box
+correct_answer_label = tk.Label(
+    root,
+    text="Correct Answer:",
+    font=("Times New Roman", 15, "bold"),
+    background="white",
+    foreground="black",
+    relief="solid",
+    width=12
+)
+
+correct_answer_label.grid(
+    row=2,
+    column=1,
+    padx=10,
+    pady=60,
+    sticky="w"
+)
+
+correct_answer_text_box = tk.Text(root, width=10, height=2)
+correct_answer_text_box.grid(
+    row=2,
+    column=2,
+    padx=10,
+    pady=5,
+    sticky="w"
+)
 
 # integrate code from reference
 
