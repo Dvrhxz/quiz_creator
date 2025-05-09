@@ -10,6 +10,7 @@ root.resizable(False, False)
 root.config(background="pink")
 
 # def functions
+# randomly take a question from the text file
 def get_random_question():
     try:
         with open("questions_for_quiz.txt", "r", encoding="utf-8") as questions_data:
@@ -30,7 +31,45 @@ def get_random_question():
         print("no file was found")
         return None
 
+# check if answer is correct
+def check_answer(selected_option):
+    global current_score
+
+    if selected_option == correct_answer:
+        current_score += 1  # Increase score if correct
+
+    score_label.config(text=f"Score: {current_score}")
+    load_new_question() # if correct pick another question
+
+# loads randomly taken question into the gui
+def load_new_question():
+    global selected_question, correct_answer
+
+    selected_question = get_random_question()
+    if selected_question:
+        question_text, answer_options, correct_answer = selected_question
+        question_label.config(text=question_text)
+
+        for key, answer_value in answer_options.items():
+            answer_labels[key].config(text=answer_value)
+            answer_buttons[key].config(command=lambda k=key: check_answer(k))
+
+    else:
+        question_label.config(text="No questions found.")
+
 # Elements
+# score box
+score_label = tk.Label(
+    root,
+    text="Score: 0",
+    font=("Times New Roman", 20, "bold"),
+    bg="black",
+    fg="white",
+    width=20,
+    relief="solid"
+)
+score_label.pack(pady=20)
+
 # question box
 question_label = tk.Label(
     root,
@@ -87,23 +126,13 @@ for index, letter_key in enumerate(["a", "b", "c", "d"]):
     answer_buttons[letter_key] = letter_buttons
     answer_labels[letter_key] = answer_text
 
+# Initialize quiz variables
+current_score = 0
+selected_question = None
+correct_answer = ""
+
 # randomly take a question from the text file
-selected_question = get_random_question()
-if selected_question:
-    question_text, answer_options, correct_answer = selected_question
+load_new_question()
 
-    question_label.config(text=question_text)
-
-    for key, answer_value in answer_options.items():
-        answer_labels[key].config(text=answer_value)
-
-else:
-    question_label.config(text="No questions found.")
-
-
-# have the user answer the question
-# check if answer is correct
-# if correct pick another question
 # loop until user decides to quit
-
 root.mainloop()
