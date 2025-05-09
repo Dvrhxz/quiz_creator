@@ -1,6 +1,7 @@
 # use tkinter to make gui for quiz
 import tkinter as tk
 import random
+import pygame.mixer
 
 # quiz window
 root = tk.Tk()
@@ -8,6 +9,19 @@ root.title("Quiz Program")
 root.geometry("1690x900")
 root.resizable(False, False)
 root.config(background="pink")
+pygame.mixer.init()
+
+# sound effects
+correct_sound = pygame.mixer.Sound("correct_answer.mp3")
+correct_sound.set_volume(0.8)
+wrong_sound = pygame.mixer.Sound("wrong_answer.mp3")
+wrong_sound.set_volume(0.8)
+
+def play_correct_sound():
+    correct_sound.play()
+
+def play_wrong_sound():
+    wrong_sound.play()
 
 # def functions
 # randomly take a question from the text file
@@ -37,6 +51,9 @@ def check_answer(selected_option):
 
     if selected_option == correct_answer:
         current_score += 1  # Increase score if correct
+        play_correct_sound()
+    else:
+        play_wrong_sound()
 
     load_new_question() # if correct pick another question
 
