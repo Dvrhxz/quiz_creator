@@ -38,21 +38,22 @@ def check_answer(selected_option):
     if selected_option == correct_answer:
         current_score += 1  # Increase score if correct
 
-    score_label.config(text=f"Score: {current_score}")
     load_new_question() # if correct pick another question
 
 # loads randomly taken question into the gui
 def load_new_question():
-    global selected_question, correct_answer
+    global selected_question, correct_answer, total_questions_loaded
 
     selected_question = get_random_question()
     if selected_question:
+        total_questions_loaded += 1
         question_text, answer_options, correct_answer = selected_question
         question_label.config(text=question_text)
 
         for key, answer_value in answer_options.items():
             answer_labels[key].config(text=answer_value)
             answer_buttons[key].config(command=lambda k=key: check_answer(k))
+            score_label.config(text=f"Score: {current_score}/{total_questions_loaded}")
 
     else:
         question_label.config(text="No questions found.")
@@ -128,6 +129,7 @@ for index, letter_key in enumerate(["a", "b", "c", "d"]):
 
 # Initialize quiz variables
 current_score = 0
+total_questions_loaded = 0
 selected_question = None
 correct_answer = ""
 
