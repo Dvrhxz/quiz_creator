@@ -5,17 +5,115 @@ c.) 2
 d.) 100
 Correct Answer: c
 ~~~~~
-Question: is water wet?
-a.) of course, why wouldnt it be?
-b.) i mean, why wouldn't it be?
-c.) lmao no
-d.) erm, akshually, wet is defined as something covered in liquid, therefore water cannot be wet as it is not covered by itself but rather it is liquid itself
-Correct Answer: d
-~~~~~
-Question: Does the program with gui work?
-a.) did it work?
-b.) sureeeeeelyyy
-c.) of course
-d.) hopefully
+Question: What is the capital of France?
+a.) Berlin
+b.) Madrid
+c.) Paris
+d.) Rome
 Correct Answer: c
+~~~~~
+Question: Which planet is known as the Red Planet?
+a.) Venus
+b.) Mars
+c.) Jupiter
+d.) Saturn
+Correct Answer: b
+~~~~~
+Question: Who developed the theory of relativity?
+a.) Isaac Newton
+b.) Albert Einstein
+c.) Galileo Galilei
+d.) Nikola Tesla
+Correct Answer: b
+~~~~~
+Question: What is the chemical symbol for gold?
+a.) Au
+b.) Ag
+c.) Pb
+d.) Fe
+Correct Answer: a
+~~~~~
+Question: In which year did World War II end?
+a.) 1943
+b.) 1945
+c.) 1947
+d.) 1950
+Correct Answer: b
+~~~~~
+Question: Which gas do plants absorb during photosynthesis?
+a.) Oxygen
+b.) Carbon Dioxide
+c.) Nitrogen
+d.) Hydrogen
+Correct Answer: b
+~~~~~
+Question: What is the largest ocean on Earth?
+a.) Atlantic Ocean
+b.) Indian Ocean
+c.) Pacific Ocean
+d.) Arctic Ocean
+Correct Answer: c
+~~~~~
+Question: Who painted the Mona Lisa?
+a.) Vincent van Gogh
+b.) Pablo Picasso
+c.) Leonardo da Vinci
+d.) Claude Monet
+Correct Answer: c
+~~~~~
+Question: What is the powerhouse of the cell?
+a.) Nucleus
+b.) Mitochondria
+c.) Ribosome
+d.) Chloroplast
+Correct Answer: b
+~~~~~
+Question: Which element has the atomic number 1?
+a.) Helium
+b.) Hydrogen
+c.) Oxygen
+d.) Nitrogen
+Correct Answer: b
+~~~~~
+Question: How many continents are there on Earth?
+a.) 5
+b.) 6
+c.) 7
+d.) 8
+Correct Answer: c
+~~~~~
+Question: Who was the first President of the United States?
+a.) Abraham Lincoln
+b.) Thomas Jefferson
+c.) George Washington
+d.) John Adams
+Correct Answer: c
+~~~~~
+Question: Which planet has the most moons?
+a.) Mars
+b.) Jupiter
+c.) Saturn
+d.) Neptune
+Correct Answer: c
+~~~~~
+Question: What is the longest river in the world?
+a.) Amazon River
+b.) Nile River
+c.) Yangtze River
+d.) Mississippi River
+Correct Answer: b
+~~~~~
+Question: What year did the Titanic sink?
+a.) 1912
+b.) 1905
+c.) 1898
+d.) 1920
+Correct Answer: a
+~~~~~
+Question: What is the fastest land animal?
+a.) Cheetah
+b.) Lion
+c.) Greyhound
+d.) Horse
+Correct Answer: a
 ~~~~~
